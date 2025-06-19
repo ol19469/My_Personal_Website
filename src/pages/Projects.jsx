@@ -1,49 +1,105 @@
-import "./Projects.css";
+import { useRef, useState, useEffect } from "react";
+import AnimatedPage from "../components/AnimatedPage";
+import Lottie from "lottie-react";
+import cliffBackground from "../assets/images/cliff-background.png";
+import alienSaucer from "../assets/images/alien.png";
+import starsAnim from "../assets/animations/stars.json";
+import shootingStarAnim from "../assets/animations/shooting_star.json";
+import forestSound from "../assets/sounds/forest-night.mp3";
+import "../pages/Projects.css";
 
-function Projects() {
-  const projectList = [
-    {
-      title: "Book Buddy",
-      description:
-        "A full-stack book review platform with authentication and user dashboards.",
-      tech: ["React", "Express", "PostgreSQL"],
-      link: "https://github.com/yourusername/book-buddy",
-    },
-    {
-      title: "Game Deals Tracker",
-      description:
-        "Frontend app that fetches game deals using an external API and displays savings.",
-      tech: ["React", "JavaScript", "REST API"],
-      link: "https://github.com/ol19469/PC_Game_Sales",
-    },
-    // Add more as needed
-  ];
+export default function Projects() {
+  const audioRef = useRef(null);
+  const [playing, setPlaying] = useState(true);
+
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = 0.3;
+      audioRef.current.loop = true;
+      if (playing) {
+        audioRef.current.play();
+      } else {
+        audioRef.current.pause();
+      }
+    }
+  }, [playing]);
 
   return (
-    <section className="projects">
-      <div className="projects-container">
-        <h1>My Projects</h1>
-        <div className="project-grid">
-          {projectList.map((project, index) => (
-            <div key={index} className="project-card">
-              <h2>{project.title}</h2>
-              <p>{project.description}</p>
-              <div className="tech-stack">
-                {project.tech.map((t, i) => (
-                  <span key={i} className="tech-tag">
-                    {t}
-                  </span>
-                ))}
-              </div>
-              <a href={project.link} target="_blank" rel="noopener noreferrer">
+    <AnimatedPage>
+      <div className="projects-page">
+        <img
+          src={cliffBackground}
+          alt="Telescope on cliff"
+          className="background-image"
+        />
+
+        {[...Array(12)].map((_, i) => (
+          <Lottie
+            key={`star-${i + 1}`}
+            animationData={starsAnim}
+            loop={true}
+            className={`stars-animation stars-${i + 1}`}
+          />
+        ))}
+
+        <Lottie
+          animationData={shootingStarAnim}
+          loop={true}
+          className="shooting-star"
+        />
+
+        <img
+          src={alienSaucer}
+          alt="Alien ship flying"
+          className="alien-saucer"
+        />
+
+        <audio ref={audioRef} src={forestSound} preload="auto" />
+
+        <button className="sound-toggle" onClick={() => setPlaying(!playing)}>
+          {playing ? "🔇 Mute" : "🔊 Sound"}
+        </button>
+
+        <section className="projects-content">
+          <h1>Projects</h1>
+          <p>
+            Here are some of the web applications and tools I’ve built. Click to
+            explore the code on GitHub!
+          </p>
+
+          <ul className="project-list">
+            <li>
+              <h3>🎮 Game Review Website</h3>
+              <p>
+                A full-stack app with authentication, game reviews, comments,
+                and search functionality.
+              </p>
+              <a
+                href="https://github.com/yourusername/game-review-site"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 View on GitHub
               </a>
-            </div>
-          ))}
-        </div>
+            </li>
+
+            <li>
+              <h3>📚 Book Buddy</h3>
+              <p>
+                A React/Express app for tracking and reviewing books, with
+                login/register functionality.
+              </p>
+              <a
+                href="https://github.com/yourusername/book-buddy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View on GitHub
+              </a>
+            </li>
+          </ul>
+        </section>
       </div>
-    </section>
+    </AnimatedPage>
   );
 }
-
-export default Projects;

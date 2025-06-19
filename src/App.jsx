@@ -1,24 +1,21 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ForestLayout from "./components/ForestLayout";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
+import Projects from "./pages/Projects";
 
-function App() {
+export default function App() {
   return (
-    <BrowserRouter>
-      <Navbar />
-      <main style={{ padding: "2rem" }}>
-        <Routes>
+    <Router>
+      <Routes>
+        <Route element={<ForestLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </main>
-    </BrowserRouter>
+          <Route path="/projects" element={<Projects />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
-
-export default App;

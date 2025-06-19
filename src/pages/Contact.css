@@ -1,0 +1,21 @@
+.contact-page {
+  background: url("/assets/dock.png") center/cover no-repeat;
+  min-height: 100vh;
+  color: #e0f7ff;
+  padding: 4rem;
+  text-shadow: 1px 1px 3px #000;
+}
+
+.contact-links {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-links li {
+  margin: 0.5rem 0;
+}
+
+.contact-links a {
+  color: #fff;
+  text-decoration: none;
+}

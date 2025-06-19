@@ -1,25 +1,7 @@
-.about {
-  padding: 4rem 2rem;
-  background-color: #1e293b; /* dark slate blue */
-  color: #f1f5f9; /* soft light gray text */
-}
-
-.about-container {
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.7;
-}
-
-.about h1 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  border-bottom: 2px solid #3b82f6;
-  display: inline-block;
-  padding-bottom: 0.5rem;
-  color: #ffffff;
-}
-
-.about p {
-  margin-bottom: 1.25rem;
-  font-size: 1.05rem;
+.about-page {
+  background: url("/assets/cabin.png") center/cover no-repeat;
+  min-height: 100vh;
+  color: #fff5dc;
+  padding: 4rem;
+  text-shadow: 1px 1px 3px #000;
 }
