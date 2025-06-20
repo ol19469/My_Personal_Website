@@ -1,13 +1,27 @@
-// src/pages/Contact.jsx
 import AnimatedPage from "../components/AnimatedPage";
 import Lottie from "lottie-react";
-import dockBackground from "../assets/images/dock-background.png"; // You'll generate or add this image
+import dockBackground from "../assets/images/dock-background.png";
 import fishJumpAnim from "../assets/animations/fish.json";
 import splashAnim from "../assets/animations/splash.json";
-
+import { useRef, useEffect, useState } from "react";
+import lakeNightSound from "../assets/sounds/lake_night.mp3";
 import "../pages/Contact.css";
 
 export default function Contact() {
+  const lakeAudioRef = useRef(null); // ✅ inside function
+  const [playing, setPlaying] = useState(true);
+
+  useEffect(() => {
+    if (lakeAudioRef.current) {
+      lakeAudioRef.current.volume = 0.3;
+      lakeAudioRef.current.loop = true;
+      if (playing) {
+        lakeAudioRef.current.play();
+      } else {
+        lakeAudioRef.current.pause();
+      }
+    }
+  }, [playing]);
   return (
     <AnimatedPage>
       <div className="contact-page">
@@ -53,6 +67,11 @@ export default function Contact() {
           loop={true}
           className="splash splash-4"
         />
+        <audio ref={lakeAudioRef} src={lakeNightSound} preload="auto" />
+
+        <button className="sound-toggle" onClick={() => setPlaying(!playing)}>
+          {playing ? "🔇 Mute" : "🔊 Sound"}
+        </button>
 
         <section className="contact-content">
           <h1>Contact Me</h1>
