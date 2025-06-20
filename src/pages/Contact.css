@@ -4,6 +4,8 @@
   color: #e0f7ff;
   padding: 4rem;
   text-shadow: 1px 1px 3px #000;
+  position: relative;
+  overflow: hidden;
 }
 
 .contact-links {
@@ -18,4 +20,122 @@
 .contact-links a {
   color: #fff;
   text-decoration: none;
+}
+.contact-links a:hover {
+  text-shadow: 0 0 5px #66ccff;
+}
+.fish-jump {
+  position: absolute;
+  bottom: 25%;
+  left: 30%;
+  width: 80px;
+  height: 80px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.splash {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.splash-1 {
+  bottom: 20%;
+  left: 10%;
+  animation: splash-pulse 10s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.splash-2 {
+  bottom: 28%;
+  left: 25%;
+  animation: splash-pulse 14s ease-in-out infinite;
+  animation-delay: 4s;
+}
+
+.splash-3 {
+  bottom: 30%;
+  left: 48%;
+  animation: splash-pulse 12s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.splash-4 {
+  bottom: 20%;
+  left: 88%; /* approaching center, still separate */
+  animation: splash-pulse 6s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+@keyframes splash-pulse {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+.contact-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  margin-top: 8vh; /* 👈 adjust this value as needed */
+}
+.fish {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.fish-1 {
+  bottom: 28%;
+  left: 7%;
+  animation: fish-flip 6s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.fish-2 {
+  bottom: 5%;
+  left: 88%;
+  animation: fish-flip 8s ease-in-out infinite;
+  animation-delay: 4s;
+}
+
+.fish-3 {
+  bottom: 35%;
+  left: 80%;
+  animation: fish-flip 5s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+/* Optional: Flip animation to make fish feel varied */
+@keyframes fish-flip {
+  0%,
+  100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(-1);
+  }
 }
