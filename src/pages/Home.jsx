@@ -23,10 +23,20 @@ export default function Home() {
           className={`home-bg ${imageLoaded ? "loaded" : ""}`}
           onLoad={handleImageLoad}
         />
-        <Lottie animationData={fire} loop={true} className="fire-animation" />
-        <Link to="/projects" className="nav-button telescope-btn" />
-        <Link to="/about" className="nav-button cabin-btn" />
-        <Link to="/contact" className="nav-button dock-btn" />
+
+        {/* Only render animations after image is loaded */}
+        {imageLoaded && (
+          <>
+            <Lottie
+              animationData={fire}
+              loop={true}
+              className="fire-animation"
+            />
+            <Link to="/projects" className="nav-button telescope-btn" />
+            <Link to="/about" className="nav-button cabin-btn" />
+            <Link to="/contact" className="nav-button dock-btn" />
+          </>
+        )}
       </div>
     </AnimatedPage>
   );
