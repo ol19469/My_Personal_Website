@@ -28,18 +28,18 @@
 
 /* Positioning based on where the objects are in your image */
 .telescope-btn {
-  top: 35%;
-  right: 12%;
+  top: 28%;
+  right: 61%;
 }
 
 .cabin-btn {
-  bottom: 25%;
-  right: 35%;
+  bottom: 35%;
+  right: 20%;
 }
 
 .dock-btn {
   bottom: 20%;
-  left: 10%;
+  left: 22%;
 }
 .fire-animation {
   position: absolute;
