@@ -1,4 +1,5 @@
 import AnimatedPage from "../components/AnimatedPage";
+import ImageLoader from "../components/ImageLoader";
 import Lottie from "lottie-react";
 import dockBackground from "../assets/images/dock-background.png";
 import fishJumpAnim from "../assets/animations/fish.json";
@@ -24,13 +25,11 @@ export default function Contact() {
   }, [playing]);
   return (
     <AnimatedPage>
-      <div className="contact-page">
-        <img
-          src={dockBackground}
-          alt="Dock on a calm lake"
-          className="background-image"
-        />
-
+      <ImageLoader
+        src={dockBackground}
+        alt="Dock on a calm lake"
+        className="background-image"
+      >
         <Lottie
           animationData={fishJumpAnim}
           loop={true}
@@ -76,7 +75,7 @@ export default function Contact() {
         <section className="contact-content">
           <h1>Contact Me</h1>
           <p>
-            I’d love to connect! Feel free to reach out via the links below.
+            I'd love to connect! Feel free to reach out via the links below.
           </p>
           <ul className="contact-links">
             <li>
@@ -102,7 +101,7 @@ export default function Contact() {
             </li>
           </ul>
         </section>
-      </div>
+      </ImageLoader>
     </AnimatedPage>
   );
 }

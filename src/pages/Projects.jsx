@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import AnimatedPage from "../components/AnimatedPage";
+import ImageLoader from "../components/ImageLoader";
 import Lottie from "lottie-react";
 import cliffBackground from "../assets/images/cliff-background.png";
 import alienSaucer from "../assets/images/alien.png";
@@ -26,13 +27,11 @@ export default function Projects() {
 
   return (
     <AnimatedPage>
-      <div className="projects-page">
-        <img
-          src={cliffBackground}
-          alt="Telescope on cliff"
-          className="background-image"
-        />
-
+      <ImageLoader
+        src={cliffBackground}
+        alt="Telescope on cliff"
+        className="background-image"
+      >
         {[...Array(12)].map((_, i) => (
           <Lottie
             key={`star-${i + 1}`}
@@ -63,7 +62,7 @@ export default function Projects() {
         <section className="projects-content">
           <h1>Projects</h1>
           <p>
-            Here are some of the web applications and tools I’ve built. Click to
+            Here are some of the web applications and tools I've built. Click to
             explore the code on GitHub!
           </p>
 
@@ -99,7 +98,7 @@ export default function Projects() {
             </li>
           </ul>
         </section>
-      </div>
+      </ImageLoader>
     </AnimatedPage>
   );
 }
