@@ -1,0 +1,23 @@
+.sound-toggle {
+  position: absolute;
+  top: 70px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 1.3rem;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background 0.2s;
+}
+
+.sound-toggle:hover {
+  background: rgba(255, 255, 255, 0.15);
+}

@@ -1,7 +1,11 @@
 import AnimatedPage from "../components/AnimatedPage";
 import ImageLoader from "../components/ImageLoader";
+import SoundPlayer from "../components/SoundPlayer";
 import "../pages/About.css";
-import aboutBackground from "../assets/images/about-background.png";
+import aboutBackground from "../assets/images/New_about.png";
+import cat from "../assets/animations/Pouch.json";
+import Lottie from "lottie-react";
+import cracklyVintageSound from "../assets/sounds/crackly-vintage.mp3";
 
 export default function About() {
   return (
@@ -11,6 +15,10 @@ export default function About() {
         alt="Cozy cabin interior"
         className="about-background"
       >
+        <Lottie animationData={cat} loop={true} className="cat-animation" />
+
+        <SoundPlayer soundFile={cracklyVintageSound} volume={0.1} />
+
         <section className="about-content">
           <h1>About Me</h1>
           <p>

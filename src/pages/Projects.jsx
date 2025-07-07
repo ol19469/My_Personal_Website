@@ -6,25 +6,11 @@ import cliffBackground from "../assets/images/cliff-background.png";
 import alienSaucer from "../assets/images/alien.png";
 import starsAnim from "../assets/animations/stars.json";
 import shootingStarAnim from "../assets/animations/shooting_star.json";
-import forestSound from "../assets/sounds/forest-night.mp3";
+import forestSound from "../assets/sounds/night-ambience.mp3";
+import SoundPlayer from "../components/SoundPlayer";
 import "../pages/Projects.css";
 
 export default function Projects() {
-  const audioRef = useRef(null);
-  const [playing, setPlaying] = useState(true);
-
-  useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.volume = 0.3;
-      audioRef.current.loop = true;
-      if (playing) {
-        audioRef.current.play();
-      } else {
-        audioRef.current.pause();
-      }
-    }
-  }, [playing]);
-
   return (
     <AnimatedPage>
       <ImageLoader
@@ -53,11 +39,7 @@ export default function Projects() {
           className="alien-saucer"
         />
 
-        <audio ref={audioRef} src={forestSound} preload="auto" />
-
-        <button className="sound-toggle" onClick={() => setPlaying(!playing)}>
-          {playing ? "🔇 Mute" : "🔊 Sound"}
-        </button>
+        <SoundPlayer soundFile={forestSound} />
 
         <section className="projects-content">
           <h1>Projects</h1>

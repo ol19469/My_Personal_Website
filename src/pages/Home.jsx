@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { useRef, useState, useEffect } from "react";
 import ImageLoader from "../components/ImageLoader";
+import SoundPlayer from "../components/SoundPlayer";
 import "./Home.css";
 import homeBg from "../assets/images/campfire_background.png";
 import fire from "../assets/animations/fire.json";
@@ -10,33 +10,20 @@ import Fireflies from "../components/Fireflies";
 import campfireSound from "../assets/sounds/campfire_sounds.mp3";
 
 export default function Home() {
-  const audioRef = useRef(null);
-  const [playing, setPlaying] = useState(true);
-
-  useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.volume = 0.3;
-      audioRef.current.loop = true;
-      if (playing) {
-        audioRef.current.play();
-      } else {
-        audioRef.current.pause();
-      }
-    }
-  }, [playing]);
-
   return (
     <AnimatedPage>
       <ImageLoader src={homeBg} alt="Forest background" className="home-bg">
         <Lottie animationData={fire} loop={true} className="fire-animation" />
 
-        <Fireflies count={8} />
+        <Fireflies count={4} />
 
-        <audio ref={audioRef} src={campfireSound} preload="auto" />
+        <SoundPlayer soundFile={campfireSound} />
 
-        <button className="sound-toggle" onClick={() => setPlaying(!playing)}>
-          {playing ? "🔇 Mute" : "🔊 Sound"}
-        </button>
+        {/* Welcome Content */}
+        <section className="home-content">
+          <h1>Welcome to My Digital Campfire</h1>
+          <p>Explore my world through the telescope, cabin, and dock</p>
+        </section>
 
         <Link to="/projects" className="nav-button telescope-btn" />
         <Link to="/about" className="nav-button cabin-btn" />

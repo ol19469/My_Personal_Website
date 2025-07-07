@@ -40,13 +40,19 @@
 }
 
 .cabin-btn {
-  bottom: 35%;
-  right: 20%;
+  bottom: 28%;
+  right: 9%;
+  width: 350px;
+  height: 200px;
+  border-radius: 8px;
 }
 
 .dock-btn {
   bottom: 20%;
-  left: 22%;
+  left: 15%;
+  width: 300px;
+  height: 120px;
+  border-radius: 8px;
 }
 .fire-animation {
   position: absolute;
@@ -121,4 +127,53 @@
 
 .sound-toggle:hover {
   background: rgba(255, 255, 255, 0.1);
+}
+
+.home-content {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 10;
+  width: 80%;
+  max-width: 600px;
+}
+
+.home-content h1 {
+  font-size: 2.7rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.home-content p {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.navigation-hints {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hint span {
+  font-size: 2rem;
+}
+
+.hint p {
+  font-size: 0.9rem;
+  margin: 0;
+  opacity: 0.8;
 }
