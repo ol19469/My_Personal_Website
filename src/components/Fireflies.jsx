@@ -12,11 +12,11 @@ export default function Fireflies({ count = 8 }) {
       id: i,
       top: Math.random() * 25 + 65, // 65% to 90% from top
       left: Math.random() * 80 + 10, // 10% to 90% from left
-      delay: Math.random() * 8, // 0 to 8 seconds initial delay
+      delay: Math.random() * 10, // 0 to 10 seconds initial delay
       scale: 0.2 + Math.random() * 0.3, // 0.2 to 0.5 scale
       opacity: 0.6 + Math.random() * 0.4, // 0.6 to 1.0 opacity
       speed: 1, // Normal speed (1x)
-      restartInterval: 8 + Math.random() * 12, // 8 to 20 seconds between restarts
+      restartInterval: 10 + Math.random() * 12, // 10 to 20 seconds between restarts
     }));
     setFireflies(newFireflies);
     setVisibleFireflies([]); // Reset on count change

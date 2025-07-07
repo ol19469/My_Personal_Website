@@ -1,6 +1,7 @@
 import AnimatedPage from "../components/AnimatedPage";
 import ImageLoader from "../components/ImageLoader";
 import Lottie from "lottie-react";
+import BackArrow from "../components/BackArrow";
 import dockBackground from "../assets/images/dock-background.png";
 import fishJumpAnim from "../assets/animations/fish.json";
 import splashAnim from "../assets/animations/splash.json";
@@ -54,6 +55,8 @@ export default function Contact() {
           className="splash splash-4"
         />
         <SoundPlayer soundFile={lakeNightSound} />
+
+        <BackArrow />
 
         <section className="contact-content">
           <h1>Contact Me</h1>

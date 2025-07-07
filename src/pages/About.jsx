@@ -1,6 +1,7 @@
 import AnimatedPage from "../components/AnimatedPage";
 import ImageLoader from "../components/ImageLoader";
 import SoundPlayer from "../components/SoundPlayer";
+import BackArrow from "../components/BackArrow";
 import "../pages/About.css";
 import aboutBackground from "../assets/images/New_about.png";
 import cat from "../assets/animations/Pouch.json";
@@ -18,6 +19,8 @@ export default function About() {
         <Lottie animationData={cat} loop={true} className="cat-animation" />
 
         <SoundPlayer soundFile={cracklyVintageSound} volume={0.1} />
+
+        <BackArrow />
 
         <section className="about-content">
           <h1>About Me</h1>

@@ -1,7 +1,7 @@
-import { useRef, useState, useEffect } from "react";
 import AnimatedPage from "../components/AnimatedPage";
 import ImageLoader from "../components/ImageLoader";
 import Lottie from "lottie-react";
+import BackArrow from "../components/BackArrow";
 import cliffBackground from "../assets/images/cliff-background.png";
 import alienSaucer from "../assets/images/alien.png";
 import starsAnim from "../assets/animations/stars.json";
@@ -41,6 +41,8 @@ export default function Projects() {
 
         <SoundPlayer soundFile={forestSound} />
 
+        <BackArrow />
+
         <section className="projects-content">
           <h1>Projects</h1>
           <p>
@@ -72,6 +74,17 @@ export default function Projects() {
               </p>
               <a
                 href="https://github.com/yourusername/book-buddy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View on GitHub
+              </a>
+            </li>
+            <li>
+              <h3>🏠 My Personal Website</h3>
+              <p>This is the website you're currently on!</p>
+              <a
+                href="https://github.com/ol19469/My_Personal_Website"
                 target="_blank"
                 rel="noopener noreferrer"
               >
