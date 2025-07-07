@@ -80,7 +80,7 @@
 
 .alien-saucer {
   position: absolute;
-  top: 12%;
+  top: 14%;
   left: -300px; /* Start far outside the screen */
   width: 120px;
   animation: fly-across 15s linear infinite !important;
@@ -115,7 +115,7 @@
 
 .projects-content {
   position: absolute;
-  top: 0%;
+  top: 3%;
   left: 50%;
   transform: translateX(-50%);
   width: 80%;

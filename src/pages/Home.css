@@ -51,10 +51,74 @@
 .fire-animation {
   position: absolute;
   width: 15%;
-  height: 15%;
-  bottom: 10%;
+  height: 30%;
+  bottom: 2%;
   left: 40%;
   background: url("/path/to/fire-animation.gif") no-repeat center center;
   background-size: cover;
   z-index: 2; /* Ensure it stays behind other content */
+}
+.fireflies-animation {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  pointer-events: none;
+  z-index: 3;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
+}
+.fireflies-animation-1 {
+  top: 15%;
+  left: 20%;
+  animation: firefly-float 8s ease-in-out infinite;
+  animation-delay: 0s;
+}
+.fireflies-animation-2 {
+  top: 35%;
+  left: 60%;
+  animation: firefly-float 6s ease-in-out infinite;
+  animation-delay: 2s;
+}
+.fireflies-animation-3 {
+  top: 55%;
+  left: 40%;
+  animation: firefly-float 10s ease-in-out infinite;
+  animation-delay: 4s;
+}
+
+@keyframes firefly-float {
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.8;
+  }
+  25% {
+    transform: translateY(-15px) scale(1.1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-5px) scale(0.9);
+    opacity: 0.6;
+  }
+  75% {
+    transform: translateY(-20px) scale(1.2);
+    opacity: 0.9;
+  }
+}
+
+.sound-toggle {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.sound-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
