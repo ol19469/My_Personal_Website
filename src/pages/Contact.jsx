@@ -5,7 +5,6 @@ import BackArrow from "../components/BackArrow";
 import dockBackground from "../assets/images/dock-background.png";
 import fishJumpAnim from "../assets/animations/fish.json";
 import splashAnim from "../assets/animations/splash.json";
-import { useRef, useEffect, useState } from "react";
 import lakeNightSound from "../assets/sounds/lake_night.mp3";
 import "../pages/Contact.css";
 import SoundPlayer from "../components/SoundPlayer";

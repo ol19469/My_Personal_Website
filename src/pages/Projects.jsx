@@ -52,13 +52,28 @@ export default function Projects() {
 
           <ul className="project-list">
             <li>
-              <h3>🎮 Game Review Website</h3>
+              <h3>💐 Las Flores Jasmin</h3>
               <p>
-                A full-stack app with authentication, game reviews, comments,
-                and search functionality.
+                Built a boutique flower shop website using Astro and Tailwind
+                CSS, featuring a responsive design, a scroll-triggered image
+                slideshow, and a custom Instagram feed powered by the Graph API.
+                The site includes a styled contact form with email delivery via
+                Resend, an embedded Google Map, and subtle animations to enhance
+                the user experience. Deployed and configured with a custom
+                domain through Cloudflare.
               </p>
               <a
-                href="https://github.com/yourusername/game-review-site"
+                href="https://lasfloresjasmin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Check out the website
+              </a>
+              <br />
+              <br />
+
+              <a
+                href="https://github.com/ol19469/LasFloresJasmin"
                 target="_blank"
                 rel="noopener noreferrer"
               >
